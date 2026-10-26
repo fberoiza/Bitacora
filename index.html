@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bitácora Masónica</title>
+<meta name="theme-color" content="#14213d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bitácora">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#mark"/></svg>
+      <div>
+        <div class="brand-title">Bitácora</div>
+        <div class="brand-sub" id="top-sub">Registro de asistencias</div>
+      </div>
+    </div>
+    <button class="sync" id="sync-btn" aria-label="Sincronizar">
+      <span class="sync-dot" id="sync-dot"></span>
+      <span id="sync-label">—</span>
+    </button>
+  </div>
+</header>
+
+<main id="view" tabindex="-1"></main>
+
+<nav class="tabs" aria-label="Secciones">
+  <a href="#inicio" data-tab="inicio"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Inicio</span></a>
+  <a href="#historial" data-tab="historial"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg><span>Historial</span></a>
+  <a href="#registrar" data-tab="registrar" class="tab-main"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Registrar</span></a>
+  <a href="#logias" data-tab="logias"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v2H3V7zM5 10v8M10 10v8M14 10v8M19 10v8M3 21h18"/></svg><span>Logias</span></a>
+  <a href="#ajustes" data-tab="ajustes"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><span>Ajustes</span></a>
+</nav>
+
+<div class="sheet-backdrop" id="sheet-backdrop" hidden></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" hidden></section>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 6 L14 44 M32 6 L50 44"/>
+      <circle cx="32" cy="8" r="3"/>
+      <path d="M10 34 L32 56 L54 34"/>
+      <path d="M17 41 L32 56 L47 41" opacity=".55"/>
+    </g>
+  </symbol>
+</svg>
+
+<script src="app.js"></script>
+</body>
+</html>
