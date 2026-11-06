@@ -1,7 +1,7 @@
 /* Service worker: guarda la app en el teléfono para abrirla sin conexión.
  * Los datos (asistencias/logias) viven en el almacenamiento local de la app.
  * Sube el número de versión cada vez que publiques cambios. */
-var CACHE = 'bitacora-v1.0.0';
+var CACHE = 'bitacora-v1.3.0';
 var SHELL = ['./', 'index.html', 'app.js', 'styles.css', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png'];
 
 self.addEventListener('install', function (e) {
